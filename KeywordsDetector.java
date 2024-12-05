@@ -25,8 +25,8 @@ public class KeywordsDetector {
         for(int i = 0; i<sentences.length; i++){
             String str = sentences[i];
             for(int j = 0; j<keywords.length; j++){
-               String s = keywords[j];
-               if(MyString.contains(str, s)){
+               String s1 = keywords[j];
+               if(MyString.contains(str, s1)){
                 System.out.println(str);
                }
             }
