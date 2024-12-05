@@ -69,7 +69,9 @@ public class ArrCharOps {
     public static int indexOf(char[] arr, char ch) {
         for (int i = 0; i<arr.length; i++){
             if (arr[i]==ch) {
+                System.out.println("raz");
                 return i;
+                
             }
         }
         return -1;
@@ -90,16 +92,13 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        int i = indexOf(arr, ch);
-        int nexti = indexOf(arr, ch, i);
-        int returni = nexti;
-        while (nexti!=-1) {
-            nexti = indexOf(arr, ch,nexti);
-            if (nexti!=-1) {
-                returni = nexti;
+        int index = -1;
+        for(int i = 0 ; i<arr.length; i++){
+            if (arr[i]==ch) {
+                index=i;
             }
         }
-        return returni;
+        return index;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
@@ -109,7 +108,7 @@ public class ArrCharOps {
         for(int i =0 ; i<arr1.length; i++){
             newarr[i] = arr1[i];
         }
-        for(int j =0 ; j<arr1.length; j++){
+        for(int j =0 ; j<arr2.length; j++){
             newarr[j+arr1.length] = arr2[j];
         }
         return newarr;
