@@ -19,7 +19,7 @@ public class KeywordsDetector {
     }
 
     // Iterates through all the sentences.
-    // If a sentence contains one or more of the kewords, prints it.
+    // If a sentence contains one or more of the keywords, prints it.
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         for (int i = 0; i < sentences.length; i++) {
             String str = sentences[i];
@@ -27,15 +27,20 @@ public class KeywordsDetector {
                 String keyword = keywords[j];
                 if (contains(str, keyword)) {
                     System.out.println(str);
-                    break; // Break to avoid duplicate printing
+                    break; 
                 }
             }
         }
     }
+
     public static boolean contains(String str1, String str2) {
-        if (str2.length()>str1.length()) {
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+
+        if (str2.length() > str1.length()) {
             return false;
         }
+
         for (int i1 = 0; i1 <= str1.length() - str2.length(); i1++) {
             boolean match = true;
             for (int b = 0; b < str2.length(); b++) {
