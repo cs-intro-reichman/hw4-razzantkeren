@@ -43,22 +43,18 @@ public class MyString {
         if (str2.length()>str1.length()) {
             return false;
         }
-        str1 = lowerCase(str1);
-        str2 = lowerCase(str2);
-       for(int i = 0 ; i <= str1.length()- str2.length(); i++ )
-       {
-        boolean r = true;
-        for(int j =0 ; j<str2.length(); j++)
-        {
-            if (str1.charAt(j+i)!=str2.charAt(j)) {
-                r = false;
-                break;
+        for (int i1 = 0; i1 <= str1.length() - str2.length(); i1++) {
+            boolean match = true;
+            for (int b = 0; b < str2.length(); b++) {
+                if (str1.charAt(i1 + b) != str2.charAt(b)) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                return true;
             }
         }
-        if (r) {
-            return true;
-        }
-       }
-       return false;
+        return false;
     }
 }
